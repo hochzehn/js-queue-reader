@@ -1,10 +1,16 @@
 #!/bin/sh
 
-NAME="hochzehn/$(basename ${PWD})"
+if [ $# -ne 1 ]
+then
+    echo "Usage: bin/run.sh RESTMQ_URL"
+else
 
-docker build --tag $NAME . > /dev/null
+    NAME="hochzehn/$(basename ${PWD})"
 
-docker run \
-  --rm \
-  $NAME \
-  $*
+    docker build --tag $NAME . > /dev/null
+
+    docker run \
+      --rm \
+      $NAME \
+      $*
+fi
