@@ -5,7 +5,7 @@ then
     echo "Usage: entrypoint.sh RESTMQ_URL"
 else
     # Parameters
-    DOWNLOAD_URL=$2
+    DOWNLOAD_URL=$1
 
     TARGET_DIR=tmp
     TARGET_FILE=$(mktemp)
